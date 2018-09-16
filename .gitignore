@@ -1,0 +1,53 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+apihelper/
+
+#built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# generated files
+bin/
+gen/
+
+# Android Studio
+*.iml
+.idea
+#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
+.gradle
+build/
+build*/
+
+# Created by .gitignore support plugin (hsz.mobi)
+android-eventin.iml
+.idea
+gen
+out
+project.properties
+version.properties
+
+# built application files
+**/*.ap_
+
+# files for the dex VM
+**/*.dex
+
+# Java class files
+**/*.class
+
+# generated files
+**/bin/
+gen/
+.gradle/
+**/build/
+

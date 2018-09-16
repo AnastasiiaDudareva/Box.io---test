@@ -1,0 +1,51 @@
+gradle.properties
+import java.text.SimpleDateFormat
+
+ext {
+    APP_NAME = "BoxIo"
+    APPLICATION_ID = "com.box.io"
+}
+
+ext {
+    versionMajor = 1
+    versionMinor = 0
+    versionPatch = 0
+    versionBuild = 0
+
+    computeVersionCode = this.&computeVersionCode
+    computeVersionName = this.&computeVersionName
+
+    generateName = this.&generateName
+}
+
+
+def computeVersionCode() {
+    return versionMajor * 1000000 + versionMinor * 10000 + versionPatch * 100 + versionBuild
+}
+
+def computeVersionName() {
+    return "${versionMajor}.${versionMinor}.${versionPatch}"
+}
+
+def generateName(appVariants) {
+    appVariants.all { variant ->
+        variant.outputs.all {
+            def appName = APP_NAME;
+            if (variant.buildType.name == "release") {
+                appName += "_v.${variant.versionName}_" + getDate()
+            } else {
+                appName += "_debug"
+            }
+            def flavors = variant.productFlavors[0]
+            def flavorName = flavors == null || flavors.name == null ? "" : "-" + flavors.name
+            appName += flavorName + ".apk"
+            outputFileName = appName
+        }
+    }
+}
+
+static def getDate() {
+    def df = new SimpleDateFormat("yyyy-MM-dd")
+    df.setTimeZone(TimeZone.getTimeZone("UTC"))
+    return df.format(new Date())
+}

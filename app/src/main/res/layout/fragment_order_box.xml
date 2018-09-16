@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:paddingBottom="50dp"
+                android:clipToPadding="false"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/header1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/gen_padding"
+                    android:text="@string/choose_size"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/box_list"
+                    style="@style/CommonRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/header1"
+                    tools:listitem="@layout/adapter_item_box" />
+
+                <TextView
+                    android:id="@+id/header2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/gen_padding"
+                    android:text="@string/choose_color"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/box_list" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/color_list"
+                    style="@style/CommonRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/header2"
+                    tools:listitem="@layout/adapter_item_box" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/print_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/gen_margin"
+                    android:text="@string/print_name"
+                    android:textSize="@dimen/text_size_18"
+                    app:layout_constraintTop_toBottomOf="@id/color_list" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/bt_order"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/gen_margin"
+            android:layout_marginTop="@dimen/gen_margin"
+            android:background="@drawable/bt_background"
+            android:text="@string/order_box"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

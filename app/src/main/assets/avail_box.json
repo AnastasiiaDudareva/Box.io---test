@@ -1,0 +1,35 @@
+{
+  "avail_box": [
+    {
+      "height": 15,
+      "width": 15,
+      "depth": 15,
+      "colors": [
+        "#FF0000",
+        "#0000FF",
+        "#FFFF00"
+      ]
+    },
+    {
+      "height": 100,
+      "width": 25,
+      "depth": 25,
+      "colors": [
+        "#FF0000",
+        "#FFFF00",
+        "#800080",
+        "#00FF00"
+      ]
+    },
+    {
+      "height": 75,
+      "width": 75,
+      "depth": 75,
+      "colors": [
+        "#00FF00",
+        "#FFA500",
+        "#0000FF"
+      ]
+    }
+  ]
+}
